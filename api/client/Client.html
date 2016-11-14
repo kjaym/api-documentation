@@ -49,7 +49,7 @@
             </div>
             <div id="sub-nav-collapse" class="sub-nav-collapse">
                 <!-- Navigation -->
-                <ul class='nav nav-list'><li class='open has-children'><a href="../../api/index.html" class="folder"><i class="arrow">&nbsp;</i>api</a><ul class='nav nav-list'><li class='open has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>client</a><ul class='nav nav-list'><li class='active'><a href="../../api/client/Client.html">Client</a></li></ul></li><li class=' has-children'><a href="../../api/search/index.html" class="folder"><i class="arrow">&nbsp;</i>search</a><ul class='nav nav-list'><li class=''><a href="../../api/search/query/index.html" class="folder"><i class="arrow">&nbsp;</i>query</a><ul class='nav nav-list'></ul></li><li class=''><a href="../../api/search/result/index.html" class="folder"><i class="arrow">&nbsp;</i>result</a><ul class='nav nav-list'></ul></li></ul></li></ul></li><li class=''><a href="../../migration/index.html" class="folder"><i class="arrow">&nbsp;</i>migration</a><ul class='nav nav-list'></ul></li></ul>
+                <ul class='nav nav-list'><li class='open has-children'><a href="../../api/index.html" class="folder"><i class="arrow">&nbsp;</i>api</a><ul class='nav nav-list'><li class='open has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>client</a><ul class='nav nav-list'><li class='active'><a href="../../api/client/Client.html">Client</a></li></ul></li><li class=' has-children'><a href="../../api/search/index.html" class="folder"><i class="arrow">&nbsp;</i>search</a><ul class='nav nav-list'><li class=' has-children'><a href="../../api/search/query/index.html" class="folder"><i class="arrow">&nbsp;</i>query</a><ul class='nav nav-list'><li class=' has-children'><a href="../../api/search/query/chemical/index.html" class="folder"><i class="arrow">&nbsp;</i>chemical</a><ul class='nav nav-list'><li class=''><a href="../../api/search/query/chemical/ChemicalFieldOperation.html">ChemicalFieldOperation</a></li></ul></li><li class=' has-children'><a href="../../api/search/query/core/index.html" class="folder"><i class="arrow">&nbsp;</i>core</a><ul class='nav nav-list'><li class=''><a href="../../api/search/query/core/FieldOperation.html">FieldOperation</a></li><li class=''><a href="../../api/search/query/core/ReferenceQuery.html">ReferenceQuery</a></li><li class=''><a href="../../api/search/query/core/SystemQuery.html">SystemQuery</a></li></ul></li><li class=''><a href="../../api/search/query/PifQuery.html">PifQuery</a></li></ul></li><li class=' has-children'><a href="../../api/search/result/index.html" class="folder"><i class="arrow">&nbsp;</i>result</a><ul class='nav nav-list'><li class=''><a href="../../api/search/result/PifSearchHit.html">PifSearchHit</a></li><li class=''><a href="../../api/search/result/PifSearchResult.html">PifSearchResult</a></li></ul></li></ul></li></ul></li><li class=''><a href="../../migration/index.html" class="folder"><i class="arrow">&nbsp;</i>migration</a><ul class='nav nav-list'></ul></li></ul>
 
                 <div class="sidebar-links">
                     
@@ -84,26 +84,24 @@
             <span style="float: left; font-size: 10px; color: gray;">
                 Monday, November 14, 2016            </span>
             <span style="float: right; font-size: 10px; color: gray;">
-                10:00 AM            </span>
+                10:42 AM            </span>
         </div>
     
     <p>A client is used to maintain a connection to the Citrination platform.</p>
-<p>Java client to connect to www.citrination.com</p>
-<pre><code>CitrinationClient client = new CitrinationClient.builder()
+<p>Connect to www.citrination.com</p>
+<pre><code class="language-Java">CitrinationClient client = new CitrinationClient.builder()
     .setApiKey(&quot;YOUR_API_KEY&quot;)
     .build();
 </code></pre>
-<p>Java client to connect to PROJECT.citrination.com</p>
-<pre><code>CitrinationClient client = new CitrinationClient.builder()
+<pre><code class="language-Python">client = CitrinationClient('YOU_API_KEY')
+</code></pre>
+<p>Connect to PROJECT.citrination.com</p>
+<pre><code class="language-Java">CitrinationClient client = new CitrinationClient.builder()
     .setProject(&quot;PROJECT&quot;)
     .setApiKey(&quot;YOUR_API_KEY&quot;)
     .build();
 </code></pre>
-<p>Python client to connect to www.citrination.com</p>
-<pre><code>client = CitrinationClient('YOU_API_KEY')
-</code></pre>
-<p>Python client to connect to PROJECT.citrination.com</p>
-<pre><code>client = CitrinationClient('YOUR_API_KEY', 'https://PROJECT.citrination.com')
+<pre><code class="language-Python">client = CitrinationClient('YOUR_API_KEY', 'https://PROJECT.citrination.com')
 </code></pre>
 
         <nav>

@@ -4,7 +4,7 @@
 <!--[if IE 8]>          <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-    <title>query - Citrination API Documentation</title>
+    <title>PifQuery - Citrination API Documentation</title>
     <meta name="description" content="Documentation of the Citrination API" />
     <meta name="author" content="Kyle Michel">
     <meta charset="UTF-8">
@@ -49,7 +49,7 @@
             </div>
             <div id="sub-nav-collapse" class="sub-nav-collapse">
                 <!-- Navigation -->
-                <ul class='nav nav-list'><li class='open has-children'><a href="../../../api/index.html" class="folder"><i class="arrow">&nbsp;</i>api</a><ul class='nav nav-list'><li class=' has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>client</a><ul class='nav nav-list'><li class=''><a href="../../../api/client/Client.html">Client</a></li></ul></li><li class='open has-children'><a href="../../../api/search/index.html" class="folder"><i class="arrow">&nbsp;</i>search</a><ul class='nav nav-list'><li class='open has-children'><a href="../../../api/search/query/index.html" class="folder"><i class="arrow">&nbsp;</i>query</a><ul class='nav nav-list'><li class=' has-children'><a href="../../../api/search/query/chemical/index.html" class="folder"><i class="arrow">&nbsp;</i>chemical</a><ul class='nav nav-list'><li class=''><a href="../../../api/search/query/chemical/ChemicalFieldOperation.html">ChemicalFieldOperation</a></li></ul></li><li class=' has-children'><a href="../../../api/search/query/core/index.html" class="folder"><i class="arrow">&nbsp;</i>core</a><ul class='nav nav-list'><li class=''><a href="../../../api/search/query/core/FieldOperation.html">FieldOperation</a></li><li class=''><a href="../../../api/search/query/core/ReferenceQuery.html">ReferenceQuery</a></li><li class=''><a href="../../../api/search/query/core/SystemQuery.html">SystemQuery</a></li></ul></li><li class=''><a href="../../../api/search/query/PifQuery.html">PifQuery</a></li></ul></li><li class=' has-children'><a href="../../../api/search/result/index.html" class="folder"><i class="arrow">&nbsp;</i>result</a><ul class='nav nav-list'><li class=''><a href="../../../api/search/result/PifSearchHit.html">PifSearchHit</a></li><li class=''><a href="../../../api/search/result/PifSearchResult.html">PifSearchResult</a></li></ul></li></ul></li></ul></li><li class=''><a href="../../../migration/index.html" class="folder"><i class="arrow">&nbsp;</i>migration</a><ul class='nav nav-list'></ul></li></ul>
+                <ul class='nav nav-list'><li class='open has-children'><a href="../../../api/index.html" class="folder"><i class="arrow">&nbsp;</i>api</a><ul class='nav nav-list'><li class=' has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>client</a><ul class='nav nav-list'><li class=''><a href="../../../api/client/Client.html">Client</a></li></ul></li><li class='open has-children'><a href="../../../api/search/index.html" class="folder"><i class="arrow">&nbsp;</i>search</a><ul class='nav nav-list'><li class='open has-children'><a href="../../../api/search/query/index.html" class="folder"><i class="arrow">&nbsp;</i>query</a><ul class='nav nav-list'><li class=' has-children'><a href="../../../api/search/query/chemical/index.html" class="folder"><i class="arrow">&nbsp;</i>chemical</a><ul class='nav nav-list'><li class=''><a href="../../../api/search/query/chemical/ChemicalFieldOperation.html">ChemicalFieldOperation</a></li></ul></li><li class=' has-children'><a href="../../../api/search/query/core/index.html" class="folder"><i class="arrow">&nbsp;</i>core</a><ul class='nav nav-list'><li class=''><a href="../../../api/search/query/core/FieldOperation.html">FieldOperation</a></li><li class=''><a href="../../../api/search/query/core/ReferenceQuery.html">ReferenceQuery</a></li><li class=''><a href="../../../api/search/query/core/SystemQuery.html">SystemQuery</a></li></ul></li><li class='active'><a href="../../../api/search/query/PifQuery.html">PifQuery</a></li></ul></li><li class=' has-children'><a href="../../../api/search/result/index.html" class="folder"><i class="arrow">&nbsp;</i>result</a><ul class='nav nav-list'><li class=''><a href="../../../api/search/result/PifSearchHit.html">PifSearchHit</a></li><li class=''><a href="../../../api/search/result/PifSearchResult.html">PifSearchResult</a></li></ul></li></ul></li></ul></li><li class=''><a href="../../../migration/index.html" class="folder"><i class="arrow">&nbsp;</i>migration</a><ul class='nav nav-list'></ul></li></ul>
 
                 <div class="sidebar-links">
                     
@@ -80,18 +80,80 @@
                 <div class="doc_content">
                     <article>
             <div class="page-header sub-header clearfix">
-            <h1>query</h1>
+            <h1>PifQuery</h1>
             <span style="float: left; font-size: 10px; color: gray;">
                 Monday, November 14, 2016            </span>
             <span style="float: right; font-size: 10px; color: gray;">
-                10:37 AM            </span>
+                10:38 AM            </span>
         </div>
     
-    <p>The base object for a query is a <a href="../../../api/search/query/PifQuery.html"><code>PifQuery</code></a> object.</p>
+    <h2 id="page_Description">Description</h2>
+<p>A PifQuery object contains all information for a single query.</p>
+<h2 id="page_Fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field name</th>
+<th>Value type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>from</code></td>
+<td>Integer</td>
+<td>0</td>
+<td>Index of the first hit that should be returned. Used for pagination.</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td>Integer</td>
+<td>100</td>
+<td>Total number of hits that should be returned.  Used for pagination. Maximum value of 100.</td>
+</tr>
+<tr>
+<td><code>returnSystem</code></td>
+<td>Boolean</td>
+<td>True</td>
+<td>True to return the PIF objects that matched. False omits the PIF objects and returns only their IDs.</td>
+</tr>
+<tr>
+<td><code>addLatex</code></td>
+<td>Boolean</td>
+<td>False</td>
+<td>True to inject Latex formatting into the results where possible. This only applies to a small subset of the fields in the results.</td>
+</tr>
+<tr>
+<td><code>scoreRelevance</code></td>
+<td>Boolean</td>
+<td>False</td>
+<td>True to turn on relevancy so that the <em>best</em> matches appear first.</td>
+</tr>
+<tr>
+<td><code>system</code></td>
+<td>Array of <a href="../../../api/search/query/core/SystemQuery.html"><code>SystemQuery</code></a> objects</td>
+<td></td>
+<td>List of queries to execute at the System level.</td>
+</tr>
+<tr>
+<td><code>includeDatasets</code></td>
+<td>Array of integers</td>
+<td></td>
+<td>Filter on a subset of datasets by their unique ID.</td>
+</tr>
+<tr>
+<td><code>excludeDatasets</code></td>
+<td>Array of integers</td>
+<td></td>
+<td>Filter out a subset of datasets by their unique ID.</td>
+</tr>
+</tbody>
+</table>
 
         <nav>
         <ul class="pager">
-            <li><a href="../../../api/search/index.html">Previous</a></li>            <li><a href="../../../api/search/query/chemical/index.html">Next</a></li>        </ul>
+            <li><a href="../../../api/search/query/core/SystemQuery.html">Previous</a></li>            <li><a href="../../../api/search/result/index.html">Next</a></li>        </ul>
     </nav>
     </article>
 

@@ -49,7 +49,7 @@
             </div>
             <div id="sub-nav-collapse" class="sub-nav-collapse">
                 <!-- Navigation -->
-                <ul class='nav nav-list'><li class=' has-children'><a href="../api/index.html" class="folder"><i class="arrow">&nbsp;</i>api</a><ul class='nav nav-list'><li class=' has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>client</a><ul class='nav nav-list'><li class=''><a href="../api/client/Client.html">Client</a></li></ul></li><li class=' has-children'><a href="../api/search/index.html" class="folder"><i class="arrow">&nbsp;</i>search</a><ul class='nav nav-list'><li class=''><a href="../api/search/query/index.html" class="folder"><i class="arrow">&nbsp;</i>query</a><ul class='nav nav-list'></ul></li><li class=''><a href="../api/search/result/index.html" class="folder"><i class="arrow">&nbsp;</i>result</a><ul class='nav nav-list'></ul></li></ul></li></ul></li><li class='open'><a href="../migration/index.html" class="folder"><i class="arrow">&nbsp;</i>migration</a><ul class='nav nav-list'></ul></li></ul>
+                <ul class='nav nav-list'><li class=' has-children'><a href="../api/index.html" class="folder"><i class="arrow">&nbsp;</i>api</a><ul class='nav nav-list'><li class=' has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>client</a><ul class='nav nav-list'><li class=''><a href="../api/client/Client.html">Client</a></li></ul></li><li class=' has-children'><a href="../api/search/index.html" class="folder"><i class="arrow">&nbsp;</i>search</a><ul class='nav nav-list'><li class=' has-children'><a href="../api/search/query/index.html" class="folder"><i class="arrow">&nbsp;</i>query</a><ul class='nav nav-list'><li class=' has-children'><a href="../api/search/query/chemical/index.html" class="folder"><i class="arrow">&nbsp;</i>chemical</a><ul class='nav nav-list'><li class=''><a href="../api/search/query/chemical/ChemicalFieldOperation.html">ChemicalFieldOperation</a></li></ul></li><li class=' has-children'><a href="../api/search/query/core/index.html" class="folder"><i class="arrow">&nbsp;</i>core</a><ul class='nav nav-list'><li class=''><a href="../api/search/query/core/FieldOperation.html">FieldOperation</a></li><li class=''><a href="../api/search/query/core/ReferenceQuery.html">ReferenceQuery</a></li><li class=''><a href="../api/search/query/core/SystemQuery.html">SystemQuery</a></li></ul></li><li class=''><a href="../api/search/query/PifQuery.html">PifQuery</a></li></ul></li><li class=' has-children'><a href="../api/search/result/index.html" class="folder"><i class="arrow">&nbsp;</i>result</a><ul class='nav nav-list'><li class=''><a href="../api/search/result/PifSearchHit.html">PifSearchHit</a></li><li class=''><a href="../api/search/result/PifSearchResult.html">PifSearchResult</a></li></ul></li></ul></li></ul></li><li class='open'><a href="../migration/index.html" class="folder"><i class="arrow">&nbsp;</i>migration</a><ul class='nav nav-list'></ul></li></ul>
 
                 <div class="sidebar-links">
                     
@@ -84,13 +84,77 @@
             <span style="float: left; font-size: 10px; color: gray;">
                 Monday, November 14, 2016            </span>
             <span style="float: right; font-size: 10px; color: gray;">
-                9:26 AM            </span>
+                11:06 AM            </span>
         </div>
     
-    
+    <p>Users of the previous clients that were available for Citrination can use this guide to convert their searches to the newer API syntax.</p>
+<h2 id="page_Update_client_libraries">Update client libraries</h2>
+<p>Updates to the python client library are available at https://github.com/CitrineInformatics/python-citrination-client or using pip with <code>pip install citrination-client</code>.</p>
+<h2 id="page_Making_connections_to_Citrination_using_the_Python_client">Making connections to Citrination using the Python client</h2>
+<p>See the <a href="../api/client/Client.html">Client</a> page.</p>
+<h2 id="page_Search_queries">Search queries</h2>
+<p>The previous python client used the following fields to define a search:</p>
+<ul>
+<li>
+<code>term</code> - General search string. <em>This has been deprecated in the new API.</em>
+</li>
+<li>
+<code>formula</code> - Chemical formula to search for.</li>
+<li>
+<code>property</code> - Name of the property to search for.</li>
+<li>
+<code>contributor</code> - Name of the contributor of the data. <em>This has been deprecated in the new API.</em>
+</li>
+<li>
+<code>reference</code> - Filter against the reference field. <em>This field has been broken into multiple parts. The example below shows how to use the DOI filter. See <a href="../api/search/query/core/ReferenceQuery.html"><code>ReferenceQuery</code></a> for more options.</em>
+</li>
+<li>
+<code>min_measurement</code> - Minimum value to allow for the property.</li>
+<li>
+<code>max_measurement</code> - Maximum value to allow for the property.</li>
+<li>
+<code>from_record</code> - Index of the first record to return.</li>
+<li>
+<code>per_page</code> - Number of results to return.</li>
+<li>
+<code>data_set_id</code> - ID of the dataset to search on.</li>
+</ul>
+<p>These fields map to a the new <a href="../api/search/query/PifQuery.html"><code>PifQuery</code></a> object in the following way. Any fields that are not defined can be omitted.</p>
+<pre><code class="language-Python">query = PifQuery(
+    from_index=`term`,
+    size=`per_page`,
+    system=SystemQuery(
+        chemical_formula=ChemicalFieldOperation(
+            filter=ChemicalFilter(equal=`formula`)
+        ),
+        properties=PropertyQuery(
+            name=FieldOperation(
+                filter=Filter(equal=`property`)
+            ),
+            value=FieldOperation(
+                filter=Filter(
+                    min=`min_measurement`,
+                    max=`max_measurement`
+                )
+            )
+        ),
+        references=ReferenceQuery(
+            doi=FieldOperation(
+                filter=Filter(equal=`reference`)
+            )
+        )
+    ),
+    include_datasets=[`data_set_id`]
+)
+</code></pre>
+<p>With this query, the following command can be used to execute against the Citrination site. See <a href="../api/search/result/PifSearchResult.html"><code>PifSearchResult</code></a> to the format of the results.</p>
+<pre><code class="language-Python">client = CitrinationClient('YOU_API_KEY')
+pifSearchResult = client.search(query)
+</code></pre>
+
         <nav>
         <ul class="pager">
-            <li><a href="../api/search/result/index.html">Previous</a></li>                    </ul>
+            <li><a href="../api/search/result/PifSearchResult.html">Previous</a></li>                    </ul>
     </nav>
     </article>
 
