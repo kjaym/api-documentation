@@ -56,7 +56,7 @@ query = PifQuery(
 
 With this query, the following command can be used to execute against the Citrination site. See [`PifSearchResult`](!api/search/result/PifSearchResult) to the format of the results.
 
-```Python
+```python
 client = CitrinationClient('YOU_API_KEY')
 pifSearchResult = client.search(query)
 ```
