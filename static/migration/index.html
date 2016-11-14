@@ -49,7 +49,7 @@
             </div>
             <div id="sub-nav-collapse" class="sub-nav-collapse">
                 <!-- Navigation -->
-                <ul class='nav nav-list'><li class=' has-children'><a href="../api/index.html" class="folder"><i class="arrow">&nbsp;</i>api</a><ul class='nav nav-list'><li class=' has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>client</a><ul class='nav nav-list'><li class=''><a href="../api/client/Client.html">Client</a></li></ul></li><li class=' has-children'><a href="../api/search/index.html" class="folder"><i class="arrow">&nbsp;</i>search</a><ul class='nav nav-list'><li class=' has-children'><a href="../api/search/query/index.html" class="folder"><i class="arrow">&nbsp;</i>query</a><ul class='nav nav-list'><li class=' has-children'><a href="../api/search/query/chemical/index.html" class="folder"><i class="arrow">&nbsp;</i>chemical</a><ul class='nav nav-list'><li class=''><a href="../api/search/query/chemical/ChemicalFieldOperation.html">ChemicalFieldOperation</a></li></ul></li><li class=' has-children'><a href="../api/search/query/core/index.html" class="folder"><i class="arrow">&nbsp;</i>core</a><ul class='nav nav-list'><li class=''><a href="../api/search/query/core/FieldOperation.html">FieldOperation</a></li><li class=''><a href="../api/search/query/core/ReferenceQuery.html">ReferenceQuery</a></li><li class=''><a href="../api/search/query/core/SystemQuery.html">SystemQuery</a></li></ul></li><li class=''><a href="../api/search/query/PifQuery.html">PifQuery</a></li></ul></li><li class=' has-children'><a href="../api/search/result/index.html" class="folder"><i class="arrow">&nbsp;</i>result</a><ul class='nav nav-list'><li class=''><a href="../api/search/result/PifSearchHit.html">PifSearchHit</a></li><li class=''><a href="../api/search/result/PifSearchResult.html">PifSearchResult</a></li></ul></li></ul></li></ul></li><li class='open'><a href="../migration/index.html" class="folder"><i class="arrow">&nbsp;</i>migration</a><ul class='nav nav-list'></ul></li></ul>
+                <ul class='nav nav-list'><li class=' has-children'><a href="../api/index.html" class="folder"><i class="arrow">&nbsp;</i>api</a><ul class='nav nav-list'><li class=' has-children'><a href="#" class="aj-nav folder"><i class="arrow">&nbsp;</i>client</a><ul class='nav nav-list'><li class=''><a href="../api/client/Client.html">Client</a></li></ul></li><li class=' has-children'><a href="../api/search/index.html" class="folder"><i class="arrow">&nbsp;</i>search</a><ul class='nav nav-list'><li class=' has-children'><a href="../api/search/pif/index.html" class="folder"><i class="arrow">&nbsp;</i>pif</a><ul class='nav nav-list'><li class=' has-children'><a href="../api/search/pif/query/index.html" class="folder"><i class="arrow">&nbsp;</i>query</a><ul class='nav nav-list'><li class=' has-children'><a href="../api/search/pif/query/chemical/index.html" class="folder"><i class="arrow">&nbsp;</i>chemical</a><ul class='nav nav-list'><li class=''><a href="../api/search/pif/query/chemical/ChemicalFieldOperation.html">ChemicalFieldOperation</a></li></ul></li><li class=' has-children'><a href="../api/search/pif/query/core/index.html" class="folder"><i class="arrow">&nbsp;</i>core</a><ul class='nav nav-list'><li class=''><a href="../api/search/pif/query/core/FieldOperation.html">FieldOperation</a></li><li class=''><a href="../api/search/pif/query/core/ReferenceQuery.html">ReferenceQuery</a></li><li class=''><a href="../api/search/pif/query/core/SystemQuery.html">SystemQuery</a></li></ul></li><li class=''><a href="../api/search/pif/query/PifQuery.html">PifQuery</a></li></ul></li><li class=' has-children'><a href="../api/search/pif/result/index.html" class="folder"><i class="arrow">&nbsp;</i>result</a><ul class='nav nav-list'><li class=''><a href="../api/search/pif/result/PifSearchHit.html">PifSearchHit</a></li><li class=''><a href="../api/search/pif/result/PifSearchResult.html">PifSearchResult</a></li></ul></li></ul></li></ul></li></ul></li><li class='open'><a href="../migration/index.html" class="folder"><i class="arrow">&nbsp;</i>migration</a><ul class='nav nav-list'></ul></li></ul>
 
                 <div class="sidebar-links">
                     
@@ -77,7 +77,7 @@
             <span style="float: left; font-size: 10px; color: gray;">
                 Monday, November 14, 2016            </span>
             <span style="float: right; font-size: 10px; color: gray;">
-                11:10 AM            </span>
+                11:25 AM            </span>
         </div>
     
     <p>Users of the previous clients that were available for Citrination can use this guide to convert their searches to the newer API syntax.</p>
@@ -99,7 +99,7 @@
 <code>contributor</code> - Name of the contributor of the data. <em>This has been deprecated in the new API.</em>
 </li>
 <li>
-<code>reference</code> - Filter against the reference field. <em>This field has been broken into multiple parts. The example below shows how to use the DOI filter. See <a href="../api/search/query/core/ReferenceQuery.html"><code>ReferenceQuery</code></a> for more options.</em>
+<code>reference</code> - Filter against the reference field. <em>This field has been broken into multiple parts. The example below shows how to use the DOI filter. See <a href="../api/search/pif/query/core/ReferenceQuery.html"><code>ReferenceQuery</code></a> for more options.</em>
 </li>
 <li>
 <code>min_measurement</code> - Minimum value to allow for the property.</li>
@@ -112,7 +112,7 @@
 <li>
 <code>data_set_id</code> - ID of the dataset to search on.</li>
 </ul>
-<p>These fields map to a the new <a href="../api/search/query/PifQuery.html"><code>PifQuery</code></a> object in the following way. Any fields that are not defined can be omitted.</p>
+<p>These fields map to a the new <a href="../api/search/pif/query/PifQuery.html"><code>PifQuery</code></a> object in the following way. Any fields that are not defined can be omitted.</p>
 <pre><code class="language-Python">query = PifQuery(
     from_index=`term`,
     size=`per_page`,
@@ -140,14 +140,14 @@
     include_datasets=[`data_set_id`]
 )
 </code></pre>
-<p>With this query, the following command can be used to execute against the Citrination site. See <a href="../api/search/result/PifSearchResult.html"><code>PifSearchResult</code></a> to the format of the results.</p>
+<p>With this query, the following command can be used to execute against the Citrination site. See <a href="../api/search/pif/result/PifSearchResult.html"><code>PifSearchResult</code></a> to the format of the results.</p>
 <pre><code class="language-Python">client = CitrinationClient('YOU_API_KEY')
 pifSearchResult = client.search(query)
 </code></pre>
 
         <nav>
         <ul class="pager">
-            <li><a href="../api/search/result/PifSearchResult.html">Previous</a></li>                    </ul>
+            <li><a href="../api/search/pif/result/PifSearchResult.html">Previous</a></li>                    </ul>
     </nav>
     </article>
 

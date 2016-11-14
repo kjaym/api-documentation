@@ -16,14 +16,14 @@ The previous python client used the following fields to define a search:
 * `formula` - Chemical formula to search for.
 * `property` - Name of the property to search for.
 * `contributor` - Name of the contributor of the data. _This has been deprecated in the new API._
-* `reference` - Filter against the reference field. _This field has been broken into multiple parts. The example below shows how to use the DOI filter. See [`ReferenceQuery`](!api/search/query/core/ReferenceQuery) for more options._
+* `reference` - Filter against the reference field. _This field has been broken into multiple parts. The example below shows how to use the DOI filter. See [`ReferenceQuery`](!api/search/pif/query/core/ReferenceQuery) for more options._
 * `min_measurement` - Minimum value to allow for the property.
 * `max_measurement` - Maximum value to allow for the property.
 * `from_record` - Index of the first record to return.
 * `per_page` - Number of results to return.
 * `data_set_id` - ID of the dataset to search on.
 
-These fields map to a the new [`PifQuery`](!api/search/query/PifQuery) object in the following way. Any fields that are not defined can be omitted.
+These fields map to a the new [`PifQuery`](!api/search/pif/query/PifQuery) object in the following way. Any fields that are not defined can be omitted.
 
 ```Python
 query = PifQuery(
@@ -54,7 +54,7 @@ query = PifQuery(
 )
 ```
 
-With this query, the following command can be used to execute against the Citrination site. See [`PifSearchResult`](!api/search/result/PifSearchResult) to the format of the results.
+With this query, the following command can be used to execute against the Citrination site. See [`PifSearchResult`](!api/search/pif/result/PifSearchResult) to the format of the results.
 
 ```Python
 client = CitrinationClient('YOU_API_KEY')
