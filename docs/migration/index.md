@@ -26,6 +26,7 @@ The previous python client used the following fields to define a search:
 These fields map to a the new [`PifQuery`](!api/search/pif/query/PifQuery) object in the following way. Any fields that are not defined can be omitted.
 
 ```Python
+from citrination-client import *
 query = PifQuery(
     from_index=`term`,
     size=`per_page`,
@@ -57,6 +58,7 @@ query = PifQuery(
 With this query, the following command can be used to execute against the Citrination site. See [`PifSearchResult`](!api/search/pif/result/PifSearchResult) to the format of the results.
 
 ```Python
+from citrination-client import *
 client = CitrinationClient('YOU_API_KEY')
 pifSearchResult = client.search(query)
 ```
