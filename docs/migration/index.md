@@ -55,7 +55,7 @@ query = PifQuery(
 )
 ```
 
-With this query, the following command can be used to execute against the Citrination site. See [`PifSearchResult`](!api/search/pif/result/PifSearchResult) to the format of the results.
+With this query, the following command can be used to execute against the Citrination site. See [`PifSearchResult`](!api/search/pif/result/PifSearchResult) for the format of the results.
 
 ```Python
 from citrination-client import *
