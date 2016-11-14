@@ -8,7 +8,7 @@ CitrinationClient client = new CitrinationClient.builder()
     .build();
 ```
 
-```python
+```Python
 client = CitrinationClient('YOU_API_KEY')
 ```
 
@@ -21,6 +21,6 @@ CitrinationClient client = new CitrinationClient.builder()
     .build();
 ```
 
-```python
+```Python
 client = CitrinationClient('YOUR_API_KEY', 'https://PROJECT.citrination.com')
 ```
