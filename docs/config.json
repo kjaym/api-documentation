@@ -12,9 +12,9 @@
     },
     "html": {
         "theme": "daux-navy",
-        "toggle_code": true,
+        "toggle_code": false,
         "date_modified": true,
-        "float": false,
+        "float": true,
         "links": {
             "python client": "https://github.com/CitrineInformatics/python-citrination-client",
             "java client": "https://github.com/CitrineInformatics/java-citrination-client",
