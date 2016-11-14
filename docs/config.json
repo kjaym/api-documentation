@@ -1,6 +1,6 @@
 {
-    "title": "PIF Documentation",
-    "tagline": "Documentation of the Physical Information File (PIF) schema",
+    "title": "Citrination API Documentation",
+    "tagline": "Documentation of the Citrination API",
     "author": "Kyle Michel",
     "ignore": {
             "files": [""],
@@ -12,12 +12,13 @@
     },
     "html": {
         "theme": "daux-navy",
-        "toggle_code": false,
+        "toggle_code": true,
         "date_modified": true,
-        "float": false,
+        "float": true,
         "links": {
-            "pypif": "https://github.com/CitrineInformatics/pypif",
-            "jpif": "https://github.com/CitrineInformatics/jpif",
+            "python client": "https://github.com/CitrineInformatics/python-citrination-client",
+            "java client": "https://github.com/CitrineInformatics/java-citrination-client",
+            "PIF documentation": "http://www.citrine.io/pif",
             "Citrination API": "http://www.citrine.io/api",
             "Citrine Informatics": "http://www.citrine.io"
         }
