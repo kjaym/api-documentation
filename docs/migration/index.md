@@ -28,7 +28,7 @@ These fields map to a the new [`PifQuery`](!api/search/pif/query/PifQuery) objec
 ```Python
 from citrination-client import *
 query = PifQuery(
-    from_index=`term`,
+    from_index=`from_record`,
     size=`per_page`,
     system=SystemQuery(
         chemical_formula=ChemicalFieldOperation(
