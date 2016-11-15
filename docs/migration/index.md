@@ -2,7 +2,7 @@ Users of the previous clients that were available for Citrination can use this g
 
 ## Update client libraries
 
-Updates to the python client library are available at https://github.com/CitrineInformatics/python-citrination-client or using pip with `pip install citrination-client`.
+Updates to the python client library are available on [github](https://github.com/CitrineInformatics/python-citrination-client) or using pip with `pip install citrination-client`.
 
 ## Making connections to Citrination using the Python client
 
@@ -59,6 +59,6 @@ With this query, the following command can be used to execute against the Citrin
 
 ```Python
 from citrination-client import *
-client = CitrinationClient('YOU_API_KEY')
+client = CitrinationClient('YOUR_API_KEY')
 pifSearchResult = client.search(query)
 ```

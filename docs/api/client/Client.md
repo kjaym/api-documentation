@@ -11,7 +11,7 @@ CitrinationClient client = new CitrinationClient.builder()
 
 * Python
 ```Python
-client = CitrinationClient('YOU_API_KEY')
+client = CitrinationClient('YOUR_API_KEY')
 ```
 
 Connect to PROJECT.citrination.com
