@@ -7,5 +7,5 @@ A Filter object describes conditions under which a field is matched.
 Field name | Value type | Default | Description
 -----------|------------|---------|------------
 `equal` | String |  | Exactly match |
-`min`   | Numeric | | Minimum bound |
-`max`   | Numeric | | Maximum bound |
+`min`   | Numeric | | Minimum bound (inclusive) |
+`max`   | Numeric | | Maximum bound (inclusive) |
