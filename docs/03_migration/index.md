@@ -23,15 +23,9 @@ The previous python client used the following fields to define a search:
 * `per_page` - Number of results to return.
 * `data_set_id` - ID of the dataset to search on.
 
-Some fields have been renamed in the new API but carry the exact same meaning. Those fields are as follows:
-
-| Old API | New API |
-|---------|---------|
-| from_record | from_index |
-| per_page | size |
-| data_set_id | include_datasets |
-
 These fields map to a the new [`PifQuery`](!api/search/pif/query/PifQuery) object in the following way. Any fields that are not defined can be omitted.
+
+** Note the differences between old keywords and new keywords. Especially that `from_record` is now `from_index` and `per_page` is now `size`. **
 
 ```Python
 from citrination-client import *
