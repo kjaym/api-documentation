@@ -25,6 +25,8 @@ The previous python client used the following fields to define a search:
 
 These fields map to a the new [`PifQuery`](!api/search/pif/query/PifQuery) object in the following way. Any fields that are not defined can be omitted.
 
+** Note the differences between old keywords and new keywords. Especially that `from_record` is now `from_index` and `per_page` is now `size`. **
+
 ```Python
 from citrination-client import *
 query = PifQuery(
