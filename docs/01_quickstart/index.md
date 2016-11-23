@@ -67,6 +67,6 @@ Results are return as a [`PifSearchResult`](!api/search/pif/result/PifSearchResu
 
 ### Next steps
 
-Users are encourage to read about the data model used on Citrination, the [PIF](http://citrine.io/pif), in order to understand how data is represented on the system.
+Users are encouraged to read about the data model used on Citrination, the [PIF](http://citrine.io/pif), in order to understand how data is represented on the system.
 
 The hierarchy of the [query language](!api/search/pif/query) exactly mirrors the hierarchy of the [PIF](http://citrine.io/pif) schema. With an understanding of this query language, users are able to query against data in Citrination in a very precise way.
